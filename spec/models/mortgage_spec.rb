@@ -86,7 +86,7 @@ RSpec.describe Mortgage, type: :model do
     end
 
     it "does not calculate if price or loan_duration is zero" do
-      mortgage.step = 6 
+      mortgage.step = 6
       mortgage.price = 10000
       mortgage.loan_duration = 0
       mortgage.save

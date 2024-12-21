@@ -11,8 +11,8 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
-  
-  #Full backtrace enabled
+
+  # Full backtrace enabled
   config.log_level = :debug
 
 

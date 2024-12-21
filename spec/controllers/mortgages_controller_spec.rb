@@ -27,7 +27,7 @@ RSpec.describe Api::V1::MortgagesController, type: :controller do
     end
 
     it 'returns a message if no incomplete mortgage is found' do
-      incomplete_mortgage.update(step:7, completed: true)
+      incomplete_mortgage.update(step: 7, completed: true)
       get :index
       expect(response).to have_http_status(:ok)
       json_response = JSON.parse(response.body)

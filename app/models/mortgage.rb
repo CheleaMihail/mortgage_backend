@@ -10,7 +10,7 @@ class Mortgage < ApplicationRecord
   validates :price, :down_payment, presence: true, numericality: { greater_than_or_equal_to: 0 }, if: -> { step >= 3 }
   validates :situation, presence: true, inclusion: { in: situations.keys }, if: -> { step >= 4 }
   validates :purchase_date, presence: true, if: -> { step >= 5 }
-  validates :loan_duration, :interest_rate, :reserve_amount, 
+  validates :loan_duration, :interest_rate, :reserve_amount,
             presence: true, numericality: { greater_than_or_equal_to: 0 }, if: -> { step >= 6 }
   validates :gift_funds, presence: true, numericality: { greater_than_or_equal_to: 0 }, if: -> { step >= 7 }
 
@@ -25,7 +25,7 @@ class Mortgage < ApplicationRecord
     else
       self.monthly_payment = nil
     end
-  end  
+  end
 
   def check_completion
     self.completed = step == 7

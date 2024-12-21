@@ -16,34 +16,33 @@ FactoryBot.define do
       interest_rate { 3.5 }
       reserve_amount { 10_000.0 }
       gift_funds { 5_000.0 }
-  
+
       trait :step_0 do
         step { 0 }
         action_type { 'buy' }
       end
-  
+
       trait :step_1 do
         step { 1 }
         country { 'USA' }
         address { '123 Main Street' }
         zipcode { '12345' }
       end
-  
+
       trait :step_2 do
         step { 2 }
         property_type { 'single_family_home' }
       end
-  
+
       trait :step_3 do
         step { 3 }
         price { 300_000.0 }
         down_payment { 60_000.0 }
       end
-  
+
       trait :completed do
         step { 7 }
         completed { true }
       end
     end
   end
-  

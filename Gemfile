@@ -12,7 +12,7 @@ gem "puma", ">= 5.0"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
-gem 'active_model_serializers', '~> 0.10.0' # For serializers
+gem "active_model_serializers", "~> 0.10.0" # For serializers
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
@@ -47,10 +47,8 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
- # For testing
-  gem 'factory_bot_rails'
-  gem 'rspec-rails', '~> 6.0.0' # For testing
-  gem 'faker'  # Optionally for generating fake data
+  # For testing
+  gem "factory_bot_rails"
+  gem "rspec-rails", "~> 6.0.0" # For testing
+  gem "faker"  # Optionally for generating fake data
 end
-
-

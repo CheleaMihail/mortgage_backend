@@ -39,7 +39,7 @@ RSpec.describe "Api::V1::Mortgages", type: :request do
         expect(response).to have_http_status(:created)
       end
     end
-  
+
     context "with invalid parameters" do
       it "does not create a new mortgage and returns errors" do
         invalid_attributes = { step: 0, action_type: nil } # Missing required field
