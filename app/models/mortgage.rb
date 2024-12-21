@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Mortgage < ApplicationRecord
   enum :action_type, buy: 0, refinance: 1
   enum :property_type, single_family_home: 0, townhome: 1, condominium: 2, apartment: 3, other: 4
@@ -20,11 +22,9 @@ class Mortgage < ApplicationRecord
   private
 
   def calculate_monthly_payment
-    if price.present? && loan_duration.present? && loan_duration > 0
-      self.monthly_payment = price / loan_duration
-    else
-      self.monthly_payment = nil
-    end
+    self.monthly_payment = (if price.present? && loan_duration.present? && loan_duration.positive?
+                              price / loan_duration
+                            end)
   end
 
   def check_completion

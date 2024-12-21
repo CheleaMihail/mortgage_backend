@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MortgageSerializer < ActiveModel::Serializer
   attributes :id, :action_type, :country, :address, :zipcode, :property_type, :price, :down_payment,
              :situation, :purchase_date, :loan_duration, :monthly_payment, :interest_rate, :reserve_amount,

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Api::V1::MortgagesController, type: :controller do
@@ -54,21 +56,21 @@ RSpec.describe Api::V1::MortgagesController, type: :controller do
   describe 'POST #create' do
     context 'with valid parameters' do
       it 'creates a new mortgage' do
-        expect {
+        expect do
           post :create, params: { mortgage: valid_attributes }
-        }.to change(Mortgage, :count).by(1)
+        end.to change(Mortgage, :count).by(1)
         expect(response).to have_http_status(:created)
       end
     end
 
     context 'with invalid parameters' do
       it 'does not create a new mortgage and returns errors' do
-        expect {
+        expect do
           post :create, params: { mortgage: invalid_attributes }
-        }.not_to change(Mortgage, :count)
+        end.not_to change(Mortgage, :count)
         expect(response).to have_http_status(422)
         json_response = JSON.parse(response.body)
-        expect(json_response['errors']).to include("Action type is not included in the list")
+        expect(json_response['errors']).to include('Action type is not included in the list')
       end
     end
   end
